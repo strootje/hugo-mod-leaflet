@@ -1,0 +1,6 @@
+[params.mods.leaflet]
+tile_layer = "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+attribution = "&copy; [OpenStreetMap](http://www.openstreetmap.org/copyright)"
+
+[params.mods.bundles]
+leaflet = "true"
