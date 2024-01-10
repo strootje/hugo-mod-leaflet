@@ -10,7 +10,7 @@
     const lon = parseFloat('{{- $lon -}}');
     const lat = parseFloat('{{- $lat -}}');
     const zoom = parseInt('{{- $zoom -}}');
-    const popup = `{{- .Inner | markdownify | HTMLEscape -}}`;
+    const popup = `{{- .Inner | markdownify | htmlEscape -}}`;
 
     const map = L.map('leaflet-{{- $hash -}}', {
         center: [lon, lat],
@@ -19,7 +19,7 @@
 
     const maxZoom = 19
     const layer = '{{- .Page.Param "mods.leaflet.tile_layer" -}}';
-    const attribution = '{{- (.Page.Param "mods.leaflet.attribution") | markdownify | HTMLEscape -}}';
+    const attribution = '{{- (.Page.Param "mods.leaflet.attribution") | markdownify | htmlEscape -}}';
     L.tileLayer(layer, { attribution, maxZoom }).addTo(map);
 
     const marker = L.marker([lon, lat]).addTo(map);
