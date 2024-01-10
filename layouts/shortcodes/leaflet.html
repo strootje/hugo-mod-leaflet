@@ -12,16 +12,17 @@
     const zoom = parseInt('{{- $zoom -}}');
     const popup = '{{- .Inner | markdownify -}}';
 
-    var map = L.map('leaflet-{{- $hash -}}', {
+    const map = L.map('leaflet-{{- $hash -}}', {
         center: [lon, lat],
         zoom: zoom,
     });
 
+    const maxZoom = 19
     const layer = '{{- .Page.Param "mods.leaflet.tile_layer" -}}';
     const attribution = '{{- (.Page.Param "mods.leaflet.attribution") | markdownify -}}';
-    L.tileLayer(layer, { attribution: attribution, maxZoom: 19 }).addTo(map);
+    L.tileLayer(layer, { attribution, maxZoom }).addTo(map);
 
-    var marker = L.marker([lon, lat]).addTo(map);
+    const marker = L.marker([lon, lat]).addTo(map);
 
     if (popup !== '') {
         marker.bindPopup(popup).openPopup();
@@ -31,3 +32,4 @@
 <noscript>
 	{{- T "leaflet.no_script" . -}}
 </noscript>
+
