@@ -10,7 +10,7 @@
     const lon = parseFloat('{{- $lon -}}');
     const lat = parseFloat('{{- $lat -}}');
     const zoom = parseInt('{{- $zoom -}}');
-    const popup = `{{- .Inner | markdownify | htmlEscape -}}`;
+    const popup = `{{- .Inner | markdownify -}}`;
 
     const map = L.map('leaflet-{{- $hash -}}', {
         center: [lon, lat],
