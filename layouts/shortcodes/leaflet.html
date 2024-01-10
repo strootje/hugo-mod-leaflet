@@ -19,7 +19,7 @@
 
     const maxZoom = 19
     const layer = '{{- .Page.Param "mods.leaflet.tile_layer" -}}';
-    const attribution = '{{- (.Page.Param "mods.leaflet.attribution") | markdownify | htmlEscape -}}';
+    const attribution = `{{- (.Page.Param "mods.leaflet.attribution") | markdownify -}}`;
     L.tileLayer(layer, { attribution, maxZoom }).addTo(map);
 
     const marker = L.marker([lon, lat]).addTo(map);
