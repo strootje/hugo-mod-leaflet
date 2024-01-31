@@ -1,3 +1,3 @@
-module git.strooware.nl/hugo-mod-leaflet
+module git.strooware.nl/hugomods/leaflet
 
-go 1.20
+go 1.21.5
